@@ -1,6 +1,6 @@
 # Boost Video Frame Interpolation via Motion Adaptation
 
-This repository contains the official PyTorch implementation of VFI_Adapter: https://arxiv.org/
+This repository contains the official PyTorch implementation of VFI_Adapter: https://arxiv.org/abs/2306.13933/
 
 ## Some Information
 [Project Page](https://haoningwu3639.github.io/VFI_Adapter_Webpage/)  $\cdot$ [PDF Download](https://arxiv.org/abs/2306.13933/)
