@@ -53,7 +53,7 @@ def Vimeo(adap_step):
             else:
                 for params in module.parameters():
                     params.requires_grad = False
-        optimG = AdamW(adap_model.model.parameters(), lr=1e-4, weight_decay=1e-3)
+        optimG = AdamW(adap_model.model.parameters(), lr=3e-4, weight_decay=1e-3)
         adap_model.train()
         
         for j in range(adap_step):
@@ -91,5 +91,5 @@ def Vimeo(adap_step):
         print("Avg Adap_PSNR: {} Adap_SSIM: {}".format(np.mean(adap_psnr_list), np.mean(adap_ssim_list)))
 
 if __name__ == "__main__":
-    adap_step = 0
+    adap_step = 10
     Vimeo(adap_step=adap_step)

@@ -26,7 +26,7 @@ def Vimeo(adap_step):
                 params.requires_grad = False
 
     lap = nn.L1Loss()
-    optimG = AdamW(adap_model.parameters(), lr=3e-4, weight_decay=1e-3)
+    optimG = AdamW(adap_model.parameters(), lr=1e-4, weight_decay=1e-3)
 
     path = '../Dataset/Vimeo/vimeo_septuplet/'
     f = open(path + 'sep_testlist.txt', 'r')

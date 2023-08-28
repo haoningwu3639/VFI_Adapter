@@ -1,9 +1,9 @@
-# Boost Video Frame Interpolation via Motion Adaptation
+# Boost Video Frame Interpolation via Motion Adaptation (BMVC 2023)
 
 This repository contains the official PyTorch implementation of VFI_Adapter: https://arxiv.org/abs/2306.13933/
 
 ## Some Information
-[Project Page](https://haoningwu3639.github.io/VFI_Adapter_Webpage/)  $\cdot$ [PDF Download](https://arxiv.org/abs/2306.13933/) $\cdot$ Checkpoints (Coming Soon)
+[Project Page](https://haoningwu3639.github.io/VFI_Adapter_Webpage/)  $\cdot$ [PDF Download](https://arxiv.org/abs/2306.13933/) $\cdot$ [Checkpoints](https://drive.google.com/file/d/1NSPgTwQZMniGmMG-jRWFR2YGzdCThiiU/view?usp=drive_link)
 
 ## Requirements
 This code has been tested with PyTorch 1.12 and CUDA 11.1. It should also be compatible with higher versions of PyTorch and CUDA. Several essential dependencies are as follows:
@@ -68,7 +68,7 @@ NOTE: If you want to reproduce the results of ene-to-end adaptation, you should 
 - [x] Model Code
 - [x] Training Code
 - [x] Benchmark Code
-- [ ] (TBD) Release Checkpoints
+- [x] Release Checkpoints
 
 ## Citation
 If you use this code for your research or project, please cite:
@@ -76,14 +76,12 @@ If you use this code for your research or project, please cite:
 	@article{wu2023boost,
       title={Boost Video Frame Interpolation via Motion Adaptation}, 
       author={Haoning Wu and Xiaoyun Zhang and Weidi Xie and Ya Zhang and Yanfeng Wang},
+      booktitle={British Machine Vision Conference (BMVC)},
       year={2023},
-      journal={arXiv preprint arXiv:2306.13933},
 	}
-
 
 ## Acknowledgements
 Many thanks to the code bases from [RIFE](https://github.com/megvii-research/ECCV2022-RIFE), [IFRNet](https://github.com/ltkong218/IFRNet), [UPRNet](https://github.com/srcn-ivl/UPR-Net).
-
 
 ## Contact
 If you have any question, please feel free to contact haoningwu3639@gmail.com.

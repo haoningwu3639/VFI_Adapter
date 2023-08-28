@@ -16,7 +16,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 def DAVIS(adap_step):
     adap_model = Model()
     adap_model.cuda()
-    padder = ImagePadder((3, 480, 854), factor=16)
 
     for name, module in adap_model.named_modules():
         if "adapter_alpha" in name or "adapter_beta" in name or "adapter_alpha_conv" in name or "adapter_beta_conv" in name:
@@ -51,6 +50,7 @@ def DAVIS(adap_step):
         I4 = cv2.imread(imgs[2])
         I5 = cv2.imread(imgs[3])
         I7 = cv2.imread(imgs[4])
+        padder = ImagePadder(I1.shape[:2], factor=16, mode='sintel')
 
         I1 = (torch.tensor(I1.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
         I3 = (torch.tensor(I3.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)

@@ -15,10 +15,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def SNU_FILM(adap_step):
     adap_model = Model()
     adap_model.device()
-    padder = ImagePadder(dims=(3, 720, 1280), factor=32, mode='sintel')
     
     lap = nn.L1Loss()
-    optimG = AdamW(adap_model.flownet.parameters(), lr=1e-4, weight_decay=1e-3)
+    optimG = AdamW(adap_model.flownet.parameters(), lr=1e-3, weight_decay=1e-3)
 
     trainable_modules = ("adapter_alpha", "adapter_beta", "adapter_alpha_conv", "adapter_beta_conv")
     for name, module in adap_model.flownet.named_modules():
@@ -45,6 +44,7 @@ def SNU_FILM(adap_step):
         I4 = cv2.imread(frames[3].replace('data/', '../../Dataset/'))
         I5 = cv2.imread(frames[4].replace('data/', '../../Dataset/'))
         I7 = cv2.imread(frames[6].replace('data/', '../../Dataset/'))
+        padder = ImagePadder(I1.shape[:2], factor=32, mode='sintel')
 
         I1 = (torch.tensor(I1.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
         I3 = (torch.tensor(I3.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)

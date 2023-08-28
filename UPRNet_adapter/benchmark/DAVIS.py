@@ -16,7 +16,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def DAVIS(adap_step):
     width = 480
     PYR_LEVEL = math.ceil(math.log2(width / 448) + 3)
-    padder = ImagePadder((3, 480, 854), factor=16)
 
     model_cfg_dict = dict(load_pretrain = True, model_size = "LARGE", model_file = "../upr-train-log/trained-models/model.pkl")
     adap_model = Pipeline(model_cfg_dict)
@@ -50,6 +49,7 @@ def DAVIS(adap_step):
         I3 = (torch.tensor(I3.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
         I5 = (torch.tensor(I5.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
         I7 = (torch.tensor(I7.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
+        padder = ImagePadder(I1.shape[:2], factor=16, mode='sintel')
         
         I1 = padder.pad(I1)
         I3 = padder.pad(I3)
@@ -66,7 +66,7 @@ def DAVIS(adap_step):
                 for params in module.parameters():
                     params.requires_grad = False
         
-        optimG = AdamW(adap_model.model.parameters(), lr=1e-4, weight_decay=1e-3)
+        optimG = AdamW(adap_model.model.parameters(), lr=3e-4, weight_decay=1e-3)
         adap_model.train()
         
         for i in range(adap_step):

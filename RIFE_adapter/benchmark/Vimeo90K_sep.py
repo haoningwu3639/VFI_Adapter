@@ -16,7 +16,7 @@ def Vimeo(adap_step):
     adap_model.device()
 
     lap = nn.L1Loss()
-    optimG = AdamW(adap_model.flownet.parameters(), lr=1e-4, weight_decay=1e-3)
+    optimG = AdamW(adap_model.flownet.parameters(), lr=1e-3, weight_decay=1e-3)
 
     trainable_modules = ("adapter_alpha", "adapter_beta", "adapter_alpha_conv", "adapter_beta_conv")
     for name, module in adap_model.flownet.named_modules():
