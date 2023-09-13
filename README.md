@@ -1,4 +1,4 @@
-# Boost Video Frame Interpolation via Motion Adaptation (BMVC 2023)
+# Boost Video Frame Interpolation via Motion Adaptation (BMVC 2023 Oral)
 
 This repository contains the official PyTorch implementation of VFI_Adapter: https://arxiv.org/abs/2306.13933/
 
