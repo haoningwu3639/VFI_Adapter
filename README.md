@@ -73,12 +73,14 @@ NOTE: If you want to reproduce the results of ene-to-end adaptation, you should 
 ## Citation
 If you use this code for your research or project, please cite:
  
-	@article{wu2023boost,
-      title={Boost Video Frame Interpolation via Motion Adaptation}, 
-      author={Haoning Wu and Xiaoyun Zhang and Weidi Xie and Ya Zhang and Yanfeng Wang},
-      booktitle={British Machine Vision Conference (BMVC)},
-      year={2023},
-	}
+	@inproceedings{Wu_2023_BMVC,
+            author    = {Haoning Wu and Xiaoyun Zhang and Weidi Xie and Ya Zhang and Yan-Feng Wang},
+            title     = {Boost Video Frame Interpolation via Motion Adaptation},
+            booktitle = {34th British Machine Vision Conference 2023, {BMVC} 2023, Aberdeen, UK, November 20-24, 2023},
+            publisher = {BMVA},
+            year      = {2023},
+            url       = {https://papers.bmvc2023.org/0179.pdf}
+}
 
 ## Acknowledgements
 Many thanks to the code bases from [RIFE](https://github.com/megvii-research/ECCV2022-RIFE), [IFRNet](https://github.com/ltkong218/IFRNet), [UPRNet](https://github.com/srcn-ivl/UPR-Net).
