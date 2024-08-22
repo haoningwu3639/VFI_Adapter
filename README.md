@@ -2,6 +2,10 @@
 
 This repository contains the official PyTorch implementation of VFI_Adapter: https://arxiv.org/abs/2306.13933/
 
+<div align="center">
+   <img src="./teaser.png">
+</div>
+
 ## Some Information
 [Project Page](https://haoningwu3639.github.io/VFI_Adapter_Webpage/)  $\cdot$ [PDF Download](https://arxiv.org/abs/2306.13933/) $\cdot$ [Checkpoints](https://drive.google.com/file/d/1NSPgTwQZMniGmMG-jRWFR2YGzdCThiiU/view?usp=drive_link)
 
